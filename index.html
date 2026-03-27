@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kanji Quiz Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div id="app">
+    <header>
+        <button onclick="goHome()">☰ Menu</button>
+        <h1>Kanji Quiz</h1>
+        <button onclick="goBack()">← Back</button>
+    </header>
+
+<!-- HOME -->
+<div id="home">
+    <h2>Start Quiz</h2>
+
+    <label>Mode:</label>
+    <select id="mode">
+        <option value="1">Kanji → English</option>
+        <option value="2">Kanji → Hiragana</option>
+        <option value="3">Hiragana → Kanji</option>
+        <option value="4">Kanji → Reading</option>
+    </select>
+
+    <label>Questions:</label>
+    <input type="number" id="qCount" value="10">
+
+    <label>Time (minutes):</label>
+    <input type="number" id="timeLimit" value="2">
+
+    <button onclick="startQuiz()">Start</button>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" class="hidden">
+    <div class="top-bar">
+        <span id="progress"></span>
+        <span id="timer"></span>
+    </div>
+
+    <h2 id="question"></h2>
+
+    <div id="answers"></div>
+
+    <div id="explanation"></div>
+</div>
+
+<!-- RESULT -->
+<div id="resultScreen" class="hidden">
+    <h2>Session Result</h2>
+    <canvas id="chart"></canvas>
+
+    <button onclick="showWrong()">Review Mistakes</button>
+    <button onclick="goHome()">Back to Home</button>
+</div>
+
+<!-- WRONG LIST -->
+<div id="wrongScreen" class="hidden">
+    <h2>Wrong Answers</h2>
+    <div id="wrongList"></div>
+    <button onclick="goHome()">Done</button>
+</div>
+
+<script src="app.js"></script>
+</div>
+</body>
+</html>
