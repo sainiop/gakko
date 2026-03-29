@@ -1360,12 +1360,6 @@ function nextQuestion() {
 
   let correctAnswer, choices;
 
-  if (mode === 1) {
-    document.getElementById("question").innerText = q.kanji;
-    correctAnswer = q.en;
-    choices = buildChoices(correctAnswer, globalPools.en);
-  }
-
   if (mode === 2) {
     document.getElementById("question").innerText = q.kanji;
     correctAnswer = q.hira;
